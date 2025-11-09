@@ -12,9 +12,11 @@ spec:
   source:
     repoURL: https://github.com/sujitshekhar/stacks
     targetRevision: main
+    repoURL: https://github.com/sujitshekhar/stacks
+    targetRevision: main
     repoURL: cnoe://argo-workflows/manifests
     targetRevision: HEAD
-    path: ref-implementation/"dev"
+    path: ref-implementation/ref-implementation/"dev"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: argo

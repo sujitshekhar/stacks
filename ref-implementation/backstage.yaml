@@ -10,9 +10,11 @@ spec:
   source:
     repoURL: https://github.com/sujitshekhar/stacks
     targetRevision: main
+    repoURL: https://github.com/sujitshekhar/stacks
+    targetRevision: main
     repoURL: cnoe://backstage/manifests
     targetRevision: HEAD
-    path: ref-implementation/"."
+    path: ref-implementation/ref-implementation/"."
   destination:
     server: "https://kubernetes.default.svc"
     namespace: backstage

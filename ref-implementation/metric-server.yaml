@@ -10,6 +10,8 @@ metadata:
 spec:
   project: default
   source:
+    repoURL: https://github.com/sujitshekhar/stacks
+    targetRevision: main
     repoURL: https://kubernetes-sigs.github.io/metrics-server
     targetRevision: 3.12.1
     helm:
