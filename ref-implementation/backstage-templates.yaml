@@ -8,9 +8,11 @@ metadata:
 spec:
   project: default
   source:
+    repoURL: https://github.com/sujitshekhar/stacks
+    targetRevision: main
     repoURL: cnoe://backstage-templates/entities
     targetRevision: HEAD
-    path: "."
+    path: ref-implementation/"."
     directory:
       exclude: 'catalog-info.yaml'
   destination:

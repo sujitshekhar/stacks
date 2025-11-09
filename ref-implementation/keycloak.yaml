@@ -10,9 +10,11 @@ spec:
     namespace: keycloak
     server: "https://kubernetes.default.svc"
   source:
+    repoURL: https://github.com/sujitshekhar/stacks
+    targetRevision: main
     repoURL: cnoe://keycloak/manifests
     targetRevision: HEAD
-    path: "."
+    path: ref-implementation/"."
   project: default
   syncPolicy:
     automated:
