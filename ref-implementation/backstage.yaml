@@ -10,16 +10,13 @@ spec:
   source:
     repoURL: https://github.com/sujitshekhar/stacks
     targetRevision: main
-    repoURL: https://github.com/sujitshekhar/stacks
-    targetRevision: main
-    repoURL: cnoe://backstage/manifests
-    targetRevision: HEAD
-    path: ref-implementation/ref-implementation/"."
+    path: ref-implementation/backstage/manifests
   destination:
     server: "https://kubernetes.default.svc"
     namespace: backstage
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
     automated:
+      prune: true
       selfHeal: true

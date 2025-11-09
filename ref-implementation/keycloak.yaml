@@ -3,23 +3,18 @@ kind: Application
 metadata:
   name: keycloak
   namespace: argocd
-  labels:
-    example: ref-implementation
 spec:
-  destination:
-    namespace: keycloak
-    server: "https://kubernetes.default.svc"
+  project: default
   source:
     repoURL: https://github.com/sujitshekhar/stacks
     targetRevision: main
-    repoURL: https://github.com/sujitshekhar/stacks
-    targetRevision: main
-    repoURL: cnoe://keycloak/manifests
-    targetRevision: HEAD
-    path: ref-implementation/ref-implementation/"."
-  project: default
+    path: ref-implementation/keycloak/manifests
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: keycloak
   syncPolicy:
-    automated:
-      selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

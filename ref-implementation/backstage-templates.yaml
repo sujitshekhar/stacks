@@ -3,25 +3,18 @@ kind: Application
 metadata:
   name: backstage-templates
   namespace: argocd
-  labels:
-    env: dev
 spec:
   project: default
   source:
     repoURL: https://github.com/sujitshekhar/stacks
     targetRevision: main
-    repoURL: https://github.com/sujitshekhar/stacks
-    targetRevision: main
-    repoURL: cnoe://backstage-templates/entities
-    targetRevision: HEAD
-    path: ref-implementation/ref-implementation/"."
-    directory:
-      exclude: 'catalog-info.yaml'
+    path: ref-implementation/backstage-templates/entities
   destination:
     server: "https://kubernetes.default.svc"
     namespace: backstage
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
     automated:
+      prune: true
       selfHeal: true

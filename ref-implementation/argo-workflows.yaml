@@ -3,25 +3,18 @@ kind: Application
 metadata:
   name: argo-workflows
   namespace: argocd
-  labels:
-    env: dev
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: https://github.com/sujitshekhar/stacks
     targetRevision: main
-    repoURL: https://github.com/sujitshekhar/stacks
-    targetRevision: main
-    repoURL: cnoe://argo-workflows/manifests
-    targetRevision: HEAD
-    path: ref-implementation/ref-implementation/"dev"
+    path: ref-implementation/argo-workflows/manifests/dev
   destination:
     server: "https://kubernetes.default.svc"
     namespace: argo
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
     automated:
+      prune: true
       selfHeal: true
